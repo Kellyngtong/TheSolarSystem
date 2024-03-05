@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema Solar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="sun"></div>
+    <div id="mercury" class="planet"></div>
+    <div id="venus" class="planet"></div>
+    <div id="earth" class="planet"></div>
+    <div id="mars" class="planet"></div>
+    <div id="jupiter" class="planet"></div>
+    <div id="saturn" class="planet"></div>
+    <div id="uranus" class="planet"></div>
+
+    <div class="imgContainer">
+      <div class="Circulo"></div>
+    </div>
+
+    <div class="switch-button">
+      <input
+        type="checkbox"
+        name="switch-button"
+        id="switch-label"
+        class="switch-button__checkbox"
+      />
+      <label
+        for="switch-label"
+        class="switch-button__label"
+        onclick="age()"
+      ></label>
+      <p>Kids Mode</p>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

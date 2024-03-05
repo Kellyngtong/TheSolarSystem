@@ -1,0 +1,208 @@
+body {
+  position: relative;
+  transform: scale(1); /* Escala inicial 1 (sin zoom) */
+  transition: transform 1s; /* Animación al hacer zoom */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background-image: url(./assets/img/2160px-Hubble_ultra_deep_field.jpg);
+  z-index: -50;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  left: 50.5%;
+  top: 50%;
+  cursor: pointer;
+}
+#sun {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(./assets/img/sol2.png);
+  background-size: 245px 245px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 60px rgb(255, 60, 0), 0 0 150px yellow, 0 0 150px red;
+  cursor: pointer;
+}
+
+#mercury {
+  width: 57px;
+  height: 57px;
+  background-repeat: no-repeat;
+  background-image: url(./assets/img/mercurio.png);
+  background-size: 29px 29px;
+  background-position-x: center;
+  background-position-y: center;
+  -webkit-filter: drop-shadow(5px 5px 0px #8a8a8a);
+  filter: drop-shadow(0px 0px 10px #9b9b9b);
+}
+#venus {
+  width: 36px;
+  height: 36px;
+  /*tiene luna*/
+  background-image: url(./assets/img/Venus.png);
+  background-size: 40px 40px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 10px rgb(107, 60, 25), 0 0 40px rgb(235, 182, 78);
+}
+
+#earth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 37px;
+  height: 37px;
+  background-image: url(./assets/img/Tierra.png);
+  background-size: 39px 39px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 10px rgb(0, 170, 255), 0 0 40px rgb(0, 170, 255);
+  /*tiene luna*/
+}
+
+h3 {
+  visibility: hidden;
+  display: flex;
+  position: relative;
+  top: -50%;
+  width: 50px;
+  height: 20px;
+  font-size: 5px;
+  color: #ffffff;
+  justify-content: center;
+  text-align: center;
+}
+#mars {
+  width: 35px;
+  height: 35px;
+  background-image: url(./assets/img/Marte.png);
+  background-size: 40px 40px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 10px rgb(144, 88, 69), 0 0 40px rgb(212, 129, 100);
+  /*tiene luna*/
+}
+
+#jupiter {
+  width: 75px;
+  height: 75px;
+  background-image: url(./assets/img/Júpiter.png);
+  background-size: 90px 90px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 10px rgb(129, 114, 97), 0 0 40px rgb(204, 178, 154);
+}
+
+#saturn {
+  width: 145px;
+  height: 65px;
+  background-color: transparent;
+  background-image: url(./assets/img/saturno.png);
+  background-size: 145px 65px;
+  background-position-x: center;
+  background-position-y: center;
+  -webkit-filter: drop-shadow(5px 5px 0px #ffffff);
+  filter: drop-shadow(0px 0px 5px #ffffff);
+}
+
+#uranus {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(77, 39, 71);
+  background-image: url(./assets/img/Urano.png);
+  background-size: 50px 50px;
+  background-position-x: center;
+  background-position-y: center;
+  box-shadow: 0 0 10px rgb(183, 221, 225), 0 0 40px rgb(193, 231, 234);
+}
+
+.imgContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+}
+
+.Circulo {
+  background: radial-gradient(
+    circle,
+    rgba(10, 9, 9, 1) 10%,
+    rgba(10, 9, 9, 0.3) 90%
+  );
+  width: 250rem;
+  height: 250rem;
+  border-radius: 50%;
+}
+
+:root {
+  --color-two: #00c8ec2f;
+  --color-one: #ff000027;
+  --color-button: #fdffff2f;
+  --color-black: #ffffff;
+}
+
+.switch-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -70%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: rgba(252, 0, 0, 0.199);
+  border-radius: 4rem;
+  padding: 1rem;
+  width: 20rem;
+}
+.switch-button .switch-button__checkbox {
+  display: none;
+}
+.switch-button .switch-button__label {
+  background-color: var(--color-one);
+  width: 5rem;
+  height: 3rem;
+  border-radius: 3rem;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.switch-button .switch-button__label:before {
+  transition: 0.2s;
+  display: block;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-button);
+  content: "";
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+  background-color: var(--color-two);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+  transform: translateX(2rem);
+}
+p {
+  color: white;
+  font-size: 2.5rem;
+}
